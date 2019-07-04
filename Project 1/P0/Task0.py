@@ -20,3 +20,7 @@ Print messages:
 "Last record of calls, <incoming number> calls <answering number> at time <time>, lasting <during> seconds"
 """
 
+# print("First record of texts, <incoming number> texts <answering number> at time <time>")
+# print("Last record of calls, <incoming number> calls <answering number> at time <time>, lasting <during> seconds")
+print("text: ", texts[0])
+print("Call: ", calls[-1])
