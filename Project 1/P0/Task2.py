@@ -20,3 +20,9 @@ Print a message:
 September 2016.".
 """
 
+#Make a hash and if it has the value then add the value
+# loop through and find the largest value
+
+
+print('TNumber spent the longest time, TotTime seconds, on the phone during September 2016.')
+
