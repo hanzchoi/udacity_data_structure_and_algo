@@ -22,7 +22,22 @@ September 2016.".
 
 #Make a hash and if it has the value then add the value
 # loop through and find the largest value
+# The phone number is in a form of a string
 
+telephone_call_time = {}
+
+for call_logs in calls:
+    if call_logs[0] not in telephone_call_time:
+        telephone_call_time[call_logs[0]] = 1
+    else:
+        telephone_call_time[call_logs[0]] += telephone_call_time.get(call_logs[0])
+
+    if call_logs[1] not in telephone_call_time:
+        telephone_call_time[call_logs[1]] = 1
+    else:
+        telephone_call_time[call_logs[1]] += 1
+        
+# print(type(calls[-1][0]))
 
 print('TNumber spent the longest time, TotTime seconds, on the phone during September 2016.')
 
