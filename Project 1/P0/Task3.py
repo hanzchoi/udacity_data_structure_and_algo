@@ -47,3 +47,25 @@ Print the answer as a part of a message::
 to other fixed lines in Bangalore."
 The percentage should have 2 decimal digits
 """
+
+# start the code by looping through the given array and same as before create a has and count the numbers of the
+
+phone_numbers_bangalore = {}
+
+for call_logs in calls01:
+    if call_logs[0] not in phone_numbers_bangalore:
+        phone_numbers_bangalore[call_logs[0]] = 1
+    else:
+        phone_numbers_bangalore[call_logs[0]] += 1
+
+    if call_logs[1] not in phone_numbers_bangalore:
+        phone_numbers_bangalore[call_logs[1]] = 1
+    else:
+        phone_numbers_bangalore[call_logs[1]] += 1
+
+
+for number in phone_numbers_bangalore:
+    print(number + ' ' + phone_numbers_bangalore.get(number))
+
+
+# print('The numbers called by people in Bangalore have codes: {}')
