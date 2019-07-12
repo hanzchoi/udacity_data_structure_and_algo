@@ -48,24 +48,36 @@ to other fixed lines in Bangalore."
 The percentage should have 2 decimal digits
 """
 
+# elif
+
 # start the code by looping through the given array and same as before create a has and count the numbers of the
 
 phone_numbers_bangalore = {}
 
+
+def dictionary_for_calls(phone_number):
+    if phone_number not in phone_numbers_bangalore:
+        phone_numbers_bangalore[phone_number] = 1
+    else:
+        phone_numbers_bangalore[phone_number] += 1
+
+
+def fixed_phone_lines(phone_number):
+    if phone_number[0] == "(" and phone_number[1] == "0":
+        return True
+    else:
+        return False
+
+
 for call_logs in calls01:
-    if call_logs[0] not in phone_numbers_bangalore:
-        phone_numbers_bangalore[call_logs[0]] = 1
-    else:
-        phone_numbers_bangalore[call_logs[0]] += 1
+    if fixed_phone_lines(call_logs[0]):
+        dictionary_for_calls(call_logs[0])
 
-    if call_logs[1] not in phone_numbers_bangalore:
-        phone_numbers_bangalore[call_logs[1]] = 1
-    else:
-        phone_numbers_bangalore[call_logs[1]] += 1
-
+    if fixed_phone_lines(call_logs[1]):
+        dictionary_for_calls(call_logs[1])
 
 for number in phone_numbers_bangalore:
-    print(number + ' ' + phone_numbers_bangalore.get(number))
+    print(number + ': ' + str(phone_numbers_bangalore.get(number)))
 
 
 # print('The numbers called by people in Bangalore have codes: {}')
