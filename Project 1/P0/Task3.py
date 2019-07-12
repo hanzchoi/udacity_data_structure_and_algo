@@ -52,7 +52,7 @@ The percentage should have 2 decimal digits
 
 # start the code by looping through the given array and same as before create a has and count the numbers of the
 
-phone_numbers_bangalore = {}
+area_code_and_mobile_prefixes = set([])
 
 
 def dictionary_for_calls(phone_number):
@@ -62,18 +62,25 @@ def dictionary_for_calls(phone_number):
         phone_numbers_bangalore[phone_number] += 1
 
 
-def fixed_phone_lines(phone_number):
+def fixed_phone_lines_check(phone_number):
     if phone_number[0] == "(" and phone_number[1] == "0":
         return True
     else:
         return False
 
 
+def mobile_phone_number_check(phone_number):
+    if phone_number[0] == "7" or phone_number[0] == "8" or phone_number[0] == "9":
+        return True
+    else:
+        return False
+
+
 for call_logs in calls01:
-    if fixed_phone_lines(call_logs[0]):
+    if fixed_phone_lines_check(call_logs[0]):
         dictionary_for_calls(call_logs[0])
 
-    if fixed_phone_lines(call_logs[1]):
+    if fixed_phone_lines_check(call_logs[1]):
         dictionary_for_calls(call_logs[1])
 
 for number in phone_numbers_bangalore:
