@@ -48,18 +48,9 @@ to other fixed lines in Bangalore."
 The percentage should have 2 decimal digits
 """
 
-# elif
-
-# start the code by looping through the given array and same as before create a has and count the numbers of the
-
 area_code_and_mobile_prefixes = set([])
 
-
-def dictionary_for_calls(phone_number):
-    if phone_number not in phone_numbers_bangalore:
-        phone_numbers_bangalore[phone_number] = 1
-    else:
-        phone_numbers_bangalore[phone_number] += 1
+# 97448 02140,(022)34715405,07-09-2016 15:02:50,679
 
 
 def fixed_phone_lines_check(phone_number):
@@ -76,15 +67,21 @@ def mobile_phone_number_check(phone_number):
         return False
 
 
+def add_area_code_or_mobile_prefixes_to_set(phone_number):
+    if fixed_phone_lines_check(phone_number):
+        close_index = phone_number.find(")")
+        print(phone_number[1:close_index])
+    elif mobile_phone_number_check(phone_number):
+        print(phone_number[0:5])
+
+
 for call_logs in calls01:
-    if fixed_phone_lines_check(call_logs[0]):
-        dictionary_for_calls(call_logs[0])
+    add_area_code_or_mobile_prefixes_to_set(call_logs[0])
+    add_area_code_or_mobile_prefixes_to_set(call_logs[1])
 
-    if fixed_phone_lines_check(call_logs[1]):
-        dictionary_for_calls(call_logs[1])
 
-for number in phone_numbers_bangalore:
-    print(number + ': ' + str(phone_numbers_bangalore.get(number)))
+# for number in area_code_and_mobile_prefixes:
+#     print(number + ': ' + str(area_code_and_mobile_prefixes.get(number)))
 
 
 # print('The numbers called by people in Bangalore have codes: {}')
