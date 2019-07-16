@@ -12,6 +12,10 @@ with open('calls.csv', 'r') as f:
     reader = csv.reader(f)
     calls = list(reader)
 
+with open('calls_01.csv', 'r') as f:
+    reader = csv.reader(f)
+    calls01 = list(reader)
+
 """
 TASK 4:
 The telephone company want to identify numbers that might be doing

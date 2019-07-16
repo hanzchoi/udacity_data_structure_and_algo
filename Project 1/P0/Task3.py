@@ -12,10 +12,6 @@ with open('calls.csv', 'r') as f:
     reader = csv.reader(f)
     calls = list(reader)
 
-with open('calls_01.csv', 'r') as f:
-    reader = csv.reader(f)
-    calls01 = list(reader)
-
 """
 TASK 3:
 (080) is the area code for fixed line telephones in Bangalore.
@@ -48,9 +44,8 @@ to other fixed lines in Bangalore."
 The percentage should have 2 decimal digits
 """
 
-area_code_and_mobile_prefixes = set([])
 
-# 97448 02140,(022)34715405,07-09-2016 15:02:50,679
+area_code_and_mobile_prefixes = set([])
 
 
 def fixed_phone_lines_check(phone_number):
@@ -75,12 +70,30 @@ def add_area_code_or_mobile_prefixes_to_set(phone_number):
         area_code_and_mobile_prefixes.add(phone_number[0:5])
 
 
-for call_logs in calls01:
+for call_logs in calls:
     add_area_code_or_mobile_prefixes_to_set(call_logs[0])
     add_area_code_or_mobile_prefixes_to_set(call_logs[1])
 
-
+# Part A:
 print('The numbers called by people in Bangalore have codes: ')
 
 for number in sorted(area_code_and_mobile_prefixes):
     print(number)
+
+
+# Part B:
+fixed_caller = 0
+also_fixed_line_receiver = 0
+percentage = 0
+
+for call_logs in calls:
+    if fixed_phone_lines_check(call_logs[0]):
+        fixed_caller += 1
+        if fixed_phone_lines_check(call_logs[1]):
+            also_fixed_line_receiver += 1
+
+
+percentage = round(also_fixed_line_receiver/fixed_caller, 2) * 100
+
+print('{} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.'.format(percentage))
+
