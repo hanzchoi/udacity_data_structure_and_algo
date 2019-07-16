@@ -7,7 +7,7 @@
 #
 
 
-def nextDay(year, month, day):
+def next_day(year, month, day):
     """Simple version: assume every month has 30 days"""
     if day < 30:
         return year, month, day + 1
@@ -18,8 +18,20 @@ def nextDay(year, month, day):
             return year, month + 1, 1
 
 
+def date_is_before(year1, month1, day1, year2, month2, day2):
+    """Returns True if year1-month1-day1 is before
+        year2-month2-day2. Otherwise, returns False."""
+    if year1 < year2:
+        return True
+    if year1 == year2:
+        if month1 < month2:
+            return True
+        if month1 == month2:
+            return day1 < day2
+    return False
 
-def daysBetweenDates(year1, month1, day1, year2, month2, day2):
+
+def days_between_dates(year1, month1, day1, year2, month2, day2):
     """Returns the number of days between year1/month1/day1
        and year2/month2/day2. Assumes inputs are valid dates
        in Gregorian calendar, and the first date is not after
@@ -28,14 +40,9 @@ def daysBetweenDates(year1, month1, day1, year2, month2, day2):
     # YOUR CODE HERE!
     days = 0
 
-    # while (year1 < year2) or (month1 < month2) or (day1 < day2):
-    #     if year1 == year2 and month1 == month2 and day1 == day2:
-    #         print("check")
-    #     else:
-    #         days += 1
-    #         # print(days)
-    #         (year1, month1, days1) = nextDay(year1, month1, day1)
-    #         print(year1, month1, day1)
+    while date_is_before(year1, month1, day1, year2, month2, day2):
+        year1, month1, day1 = next_day(year1, month1, day1)
+        days += 1
 
     return days
 
@@ -46,7 +53,7 @@ def test():
                   ((2012, 9, 1, 2012, 9, 4), 3)]
 
     for (args, answer) in test_cases:
-        result = daysBetweenDates(*args)
+        result = days_between_dates(*args)
         if result != answer:
             print("Test with data:", args, "failed")
         else:

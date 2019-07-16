@@ -70,9 +70,9 @@ def mobile_phone_number_check(phone_number):
 def add_area_code_or_mobile_prefixes_to_set(phone_number):
     if fixed_phone_lines_check(phone_number):
         close_index = phone_number.find(")")
-        print(phone_number[1:close_index])
+        area_code_and_mobile_prefixes.add(phone_number[1:close_index])
     elif mobile_phone_number_check(phone_number):
-        print(phone_number[0:5])
+        area_code_and_mobile_prefixes.add(phone_number[0:5])
 
 
 for call_logs in calls01:
@@ -80,8 +80,7 @@ for call_logs in calls01:
     add_area_code_or_mobile_prefixes_to_set(call_logs[1])
 
 
-# for number in area_code_and_mobile_prefixes:
-#     print(number + ': ' + str(area_code_and_mobile_prefixes.get(number)))
+print('The numbers called by people in Bangalore have codes: ')
 
-
-# print('The numbers called by people in Bangalore have codes: {}')
+for number in sorted(area_code_and_mobile_prefixes):
+    print(number)
