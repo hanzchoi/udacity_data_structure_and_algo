@@ -38,8 +38,8 @@ def days_between_dates(year1, month1, day1, year2, month2, day2):
        the second."""
 
     # program defensively! Add an assertion if the input is not valid!
-    assert (date_is_before(year1, month1, day1, year2, month2, day2))
-
+    # assert (date_is_before(year1, month1, day1, year2, month2, day2))
+    assert not date_is_before(year2, month2, day2, year1, month1, day1)
     days = 0
 
     while date_is_before(year1, month1, day1, year2, month2, day2):
