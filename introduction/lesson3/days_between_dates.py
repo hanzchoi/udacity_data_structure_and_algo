@@ -7,9 +7,13 @@
 #
 
 
+def days_in_month(year, month):
+    return 30
+
+
 def next_day(year, month, day):
     """Simple version: assume every month has 30 days"""
-    if day < 30:
+    if day < days_in_month(year, month):
         return year, month, day + 1
     else:
         if month == 12:
