@@ -54,6 +54,13 @@ def days_between_dates(year1, month1, day1, year2, month2, day2):
 
 
 def test():
+    # test with 30-day months:
+    assert days_between_dates(2013, 1, 1, 2013, 1, 1) == 0
+    assert days_between_dates(2013, 1, 1, 2013, 1, 2) == 1
+    assert next_day(2013, 1, 1) == (2013, 1, 2)
+    assert next_day(2013, 4, 30) == (2013, 5, 1)
+    assert next_day(2012, 12, 31) == (2013, 1, 1)
+
     test_cases = [((2012, 9, 30, 2012, 10, 30), 30),
                   ((2012, 1, 1, 2013, 1, 1), 360),
                   ((2012, 9, 1, 2012, 9, 4), 3)]
