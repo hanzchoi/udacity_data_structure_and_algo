@@ -10,12 +10,11 @@
 def is_leap_year(year):
     if year % 400 == 0:
         return True
-    elif year % 100 == 0:
+    if year % 100 == 0:
         return False
-    elif year % 4 == 0:
+    if year % 4 == 0:
         return True
-    else:
-        return False
+    return False
 
 
 def days_in_month(year, month):
@@ -84,11 +83,14 @@ def test():
     assert next_day(2012, 12, 31) == (2013, 1, 1)
     assert next_day(2013, 2, 28) == (2013, 3, 1)
     assert next_day(2013, 9, 30) == (2013, 10, 1)
+    assert next_day(2012, 2, 28) == (2012, 2, 29)
+    assert days_between_dates(2012, 1, 1, 2013, 1, 1) == 366
     assert days_between_dates(2013, 1, 1, 2014, 1, 1) == 365
+    assert days_between_dates(2013, 1, 24, 2013, 6, 29) == 156
     print('Test case passed for the stubs')
 
     test_cases = [((2012, 9, 30, 2012, 10, 30), 30),
-                  ((2012, 1, 1, 2013, 1, 1), 365),
+                  ((2012, 1, 1, 2013, 1, 1), 366),
                   ((2012, 9, 1, 2012, 9, 4), 3)]
 
     for (args, answer) in test_cases:
