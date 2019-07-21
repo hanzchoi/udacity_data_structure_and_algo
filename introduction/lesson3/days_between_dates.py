@@ -8,7 +8,15 @@
 
 
 def days_in_month(year, month):
-    return 30
+    # if month in (1, 3, 5, 7, 8, 10, 12)  this is to use a
+    if month == 1 or month == 3 or month == 5 or month == 7 \
+            or month == 8 or month == 10 or month == 12:
+        return 31
+    else:
+        if month == 2:
+            return 28
+        else:
+            return 30
 
 
 def next_day(year, month, day):
@@ -60,9 +68,13 @@ def test():
     assert next_day(2013, 1, 1) == (2013, 1, 2)
     assert next_day(2013, 4, 30) == (2013, 5, 1)
     assert next_day(2012, 12, 31) == (2013, 1, 1)
+    assert next_day(2013, 2, 28) == (2013, 3, 1)
+    assert next_day(2013, 9, 30) == (2013, 10, 1)
+    assert days_between_dates(2013, 1, 1, 2014, 1, 1) == 365
+    print('Test case passed for the stubs')
 
     test_cases = [((2012, 9, 30, 2012, 10, 30), 30),
-                  ((2012, 1, 1, 2013, 1, 1), 360),
+                  ((2012, 1, 1, 2013, 1, 1), 365),
                   ((2012, 9, 1, 2012, 9, 4), 3)]
 
     for (args, answer) in test_cases:
