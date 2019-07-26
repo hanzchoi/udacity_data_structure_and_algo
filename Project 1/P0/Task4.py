@@ -32,20 +32,45 @@ If that is the case then make a set of outcall incoming call out going text inco
 combine all of the incoming numbers, text_sending numbers, text_receiving_numbers
 """
 
-def get_outcall_numbers(call_log):
 
-def get_incoming_numbers(call_log):
+def get_outcall_numbers(call_logs):
+    outcall_set = set([])
+
+    for call_log in call_logs:
+        outcall_set.add(call_log[0])
+
+    return outcall_set
+
+
+def get_incoming_numbers(call_calls):
+    incoming_set = set([])
+
+    for call_log in call_calls:
+        incoming_set.add(call_log[1])
+
+    return incoming_set
+
 
 def get_sending_text_numbers(text_log):
-    
+    sending_text_set = set([])
+
+    return sending_text_set
+
+
 def get_receive_text_numbers(text_log):
+    receiving_text_set = set([0])
 
 
-print('These numbers could be telemarketers: ')
+    return receiving_text_set
+
+
+# print('These numbers could be telemarketers: ')
 # list of numbers
 
-call_set = set([])
+outcall = get_outcall_numbers(calls)
+incoming_call = get_incoming_numbers(calls)
 
-for call_log in calls:
-    call_set.add(call_log[0])
-    call_set.add(call_log[1])
+for numbers in incoming_call:
+    print(numbers)
+
+print(len(incoming_call))
