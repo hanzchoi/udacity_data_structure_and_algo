@@ -25,12 +25,6 @@ Print a message:
 The list of numbers should be print out one per line in lexicographic order with no duplicates.
 """
 
-"""
-First get the telemarketing numbers from the phone number list and this time only the out call number 
-I am guessing that it is not the usual numbers that starts with 140? 
-If that is the case then make a set of outcall incoming call out going text incoming text
-combine all of the incoming numbers, text_sending numbers, text_receiving_numbers
-"""
 
 
 def get_outcall_numbers(call_logs):
@@ -42,35 +36,28 @@ def get_outcall_numbers(call_logs):
     return outcall_set
 
 
-def get_incoming_numbers(call_calls):
-    incoming_set = set([])
+def all_phone_numbers_except_outcalls(call_logs, text_logs):
+    phone_number_set = set([])
 
-    for call_log in call_calls:
-        incoming_set.add(call_log[1])
+    for call_log in call_logs:
+        phone_number_set.add(call_log[1])
 
-    return incoming_set
+    for text_log in text_logs:
+        phone_number_set.add(text_log[0])
+        phone_number_set.add(text_log[1])
 
-
-def get_sending_text_numbers(text_log):
-    sending_text_set = set([])
-
-    return sending_text_set
+    return phone_number_set
 
 
-def get_receive_text_numbers(text_log):
-    receiving_text_set = set([0])
-
-
-    return receiving_text_set
-
-
-# print('These numbers could be telemarketers: ')
-# list of numbers
-
+possible_telemarketer_numbers = []
 outcall = get_outcall_numbers(calls)
-incoming_call = get_incoming_numbers(calls)
+except_outcall = all_phone_numbers_except_outcalls(calls, texts)
 
-for numbers in incoming_call:
-    print(numbers)
+for number in outcall:
+    if number not in except_outcall:
+        possible_telemarketer_numbers.append(number)
 
-print(len(incoming_call))
+print('These numbers could be telemarketers: ')
+
+for number in possible_telemarketer_numbers:
+    print(number)
