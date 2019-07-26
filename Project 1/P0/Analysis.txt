@@ -1,0 +1,5 @@
+Calculate Big O
+Once you have completed your solution for each problem,
+perform a run time analysis (Worst Case Big-O Notation) of your solution.
+Document this for each problem and include this in your submission.
+
