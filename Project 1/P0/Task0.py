@@ -20,9 +20,6 @@ Print messages:
 "Last record of calls, <incoming number> calls <answering number> at time <time>, lasting <during> seconds"
 """
 
-# print("First record of texts, <incoming number> texts <answering number> at time <time>")
-# print("Last record of calls, <incoming number> calls <answering number> at time <time>, lasting <during> seconds")
-
 
 text_incoming_number = texts[0][0]
 text_answering_number = texts[0][1]
