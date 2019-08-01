@@ -2,6 +2,7 @@
 Read file into texts and calls.
 It's ok if you don't understand how to read files
 """
+import operator
 import csv
 with open('texts.csv', 'r') as f:
     reader = csv.reader(f)
@@ -34,12 +35,13 @@ for call_logs in calls:
         telephone_call_time[call_logs[1]] += int(call_logs[-1])
 
 longest_phone_number = ""
-longest_time = 0
 
-for phone_number in telephone_call_time:
-    if telephone_call_time.get(phone_number) > longest_time:
-        longest_phone_number = phone_number
-        longest_time = telephone_call_time.get(phone_number)
+# for phone_number in telephone_call_time:
+#     if telephone_call_time.get(phone_number) > longest_time:
+#         longest_phone_number = phone_number
+#         longest_time = telephone_call_time.get(phone_number)
 
-print('{} spent the longest time, {} seconds, on the phone during September 2016.'.format(longest_phone_number, longest_time))
+longest_phone_number = max(telephone_call_time.items(), key=operator.itemgetter(1))[0]
+
+print('{} spent the longest time, {} seconds, on the phone during September 2016.'.format(longest_phone_number, telephone_call_time.get(longest_phone_number)))
 
