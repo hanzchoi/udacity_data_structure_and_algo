@@ -67,7 +67,9 @@ def add_area_code_or_mobile_prefixes_to_set(phone_number):
         close_index = phone_number.find(")")
         area_code_and_mobile_prefixes.add(phone_number[1:close_index])
     elif mobile_phone_number_check(phone_number):
-        area_code_and_mobile_prefixes.add(phone_number[0:5])
+        area_code_and_mobile_prefixes.add(phone_number[0:4])
+    elif phone_number.startswith("140"):
+        area_code_and_mobile_prefixes.add(phone_number[0:3])
 
 
 for call_logs in calls:
@@ -82,18 +84,18 @@ for number in sorted(area_code_and_mobile_prefixes):
 
 
 # Part B:
-fixed_caller = 0
-also_fixed_line_receiver = 0
+total = 0
+fixed_line_receiver = 0
 percentage = 0
 
 for call_logs in calls:
-    if fixed_phone_lines_check(call_logs[0]):
-        fixed_caller += 1
-        if fixed_phone_lines_check(call_logs[1]):
-            also_fixed_line_receiver += 1
+    if call_logs[0].startswith("(080)"):
+        total += 1
+        if call_logs[1].startswith("(080)"):
+            fixed_line_receiver += 1
 
 
-percentage = round(also_fixed_line_receiver/fixed_caller, 2) * 100
+percentage = round(fixed_line_receiver/total, 4) * 100
 
 print('{} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.'.format(percentage))
 

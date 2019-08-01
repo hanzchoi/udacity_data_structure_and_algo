@@ -18,3 +18,12 @@ O(n)
 
 Task4: 
 O(n^2)
+
+For analysis, you should mention how you arrived at it by referring to critical parts of your implementation.
+For example
+
+task 0, let us assume that time taken to read CSV file will take constant time. So, we can directly fetch the first and last record from the dataset using index 0 and -1 respectively. It will take constant time i.e O(1).
+task 1, we are traversing the calls and text data sets and storing the values into a set. Traversing both the data set will take linear time. So we can say that time taken is O(n+m) where n and m are the lengths of dataset calls and texts respectively.
+Similarly, we have to write a description for analysis of every problem.
+Note:
+For task 3 and 4 we have used sorting technique which will take O(n log n) runtime. Consider it while analyzing time complexity.
