@@ -59,7 +59,7 @@ for number in outcall:
 
 print('These numbers could be telemarketers: ')
 
-for number in possible_telemarketer_numbers:
+for number in sorted(possible_telemarketer_numbers):
     print(number)
 
 
