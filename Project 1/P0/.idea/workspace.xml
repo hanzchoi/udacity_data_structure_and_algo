@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b42a73d3-4fd1-4caf-b469-e03ce0b05ea1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Practice/Strings/hamming_distance.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Practice/Strings/hamming_distance.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practice/Strings/reverse_the_words_in_sentence.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Practice/Strings/reverse_the_words_in_sentence.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Analysis.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Analysis.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Task2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task4.py" beforeDir="false" afterPath="$PROJECT_DIR$/Task4.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

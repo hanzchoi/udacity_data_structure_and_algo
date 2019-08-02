@@ -20,7 +20,9 @@ def word_flipper(our_string):
         word_list[idx] = word_list[idx][::-1]
 
     return " ".join(word_list)
+
 # Test Cases
+
 
 print ("Pass" if ('retaw' == word_flipper('water')) else "Fail")
 print ("Pass" if ('sihT si na elpmaxe' == word_flipper('This is an example')) else "Fail")
