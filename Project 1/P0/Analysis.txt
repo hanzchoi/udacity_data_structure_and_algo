@@ -3,27 +3,55 @@ Once you have completed your solution for each problem,
 perform a run time analysis (Worst Case Big-O Notation) of your solution.
 Document this for each problem and include this in your submission.
 
-Task0:
-O(1)
-
-Task1: 
-O(n)
-
-Task2:
-O(n)
-
-Task3: 
-O(n)
+Task0: O(1)
+Let us assume that time taken to read CSV file will take constant time.
+So, we can directly fetch the first and last record from the dataset using
+index 0 for the first record of text and -1 for the last record of call respectively.
+It will take constant time i.e O(1).
 
 
-Task4: 
-O(n^2)
+Task1: O(n+m)
+We are traversing the calls and text data sets and storing the values into a set.
+Traversing both the data set will take linear time.
+So we can say that time taken is O(n+m) where n and m are the lengths of dataset calls and texts respectively.
 
-For analysis, you should mention how you arrived at it by referring to critical parts of your implementation.
-For example
 
-task 0, let us assume that time taken to read CSV file will take constant time. So, we can directly fetch the first and last record from the dataset using index 0 and -1 respectively. It will take constant time i.e O(1).
-task 1, we are traversing the calls and text data sets and storing the values into a set. Traversing both the data set will take linear time. So we can say that time taken is O(n+m) where n and m are the lengths of dataset calls and texts respectively.
-Similarly, we have to write a description for analysis of every problem.
-Note:
-For task 3 and 4 we have used sorting technique which will take O(n log n) runtime. Consider it while analyzing time complexity.
+Task2: O(n) or O(n * m)
+We are traversing the calls dataset and storing key pair value into a dictionary.
+Traversing the calls dataset will take linear time.
+We are also searching through the dictionary with in the for loop and in amortized worst case for it will take linear time.
+So we can say that time taken is O(n * m) where n is the length of calls data and m is the length of telephone call time dictionary in amortized worst case.
+We can also say that time taken is O(n) where the telephone call time dictionary doesnt affect the time complexity as much (which will be O(1))
+
+
+Task3: O(n)
+Part A
+In part A, we are traversing the calls data set and storing the values into a set.
+Then we sort the set and loop through set to display each element.
+Traversing the data set will take linear time.
+It is safe to assume .find() method will take constant time because we check for ( prior to the method call.
+The sorted method will take quasilinear time.
+Traversing the set will take linear time.
+So we can say that time take is O(n) + O(m) + O(m log m) where n is the length of call data set and m is the length of set respectively.
+Since O(m) is less than O(m log m) we can rewrite the complexity as O(n) + O(m log m).
+Additionally, we know that m is a subset of n which means m will never be greater than m.
+Thus, we can further condense the complexity to O(n).
+
+Part B
+In part B, we are traversing the calls data set and counting each element that starts with "(080)".
+Traversing the data set will take linear time.
+So we can say that time taken is O(n) where n is the length of data set calls and respectively.
+
+Conclusion:
+The time complexity of the whole file will be O(n) + O(n) which is equivalent to O(2n).
+Because we are looking for the worst time complexity we can drop the constant,
+leaving us with O(n).
+
+
+Task4: O(n^2)
+We are traversing the calls and text data sets and storing the values into a set.
+Traversing both the data set will take linear time.
+So we can say that time taken is O(n+m) where n and m are the lengths of dataset calls and texts respectively.
+
+
+

@@ -36,11 +36,6 @@ for call_logs in calls:
 
 longest_phone_number = ""
 
-# for phone_number in telephone_call_time:
-#     if telephone_call_time.get(phone_number) > longest_time:
-#         longest_phone_number = phone_number
-#         longest_time = telephone_call_time.get(phone_number)
-
 longest_phone_number = max(telephone_call_time.items(), key=operator.itemgetter(1))[0]
 
 print('{} spent the longest time, {} seconds, on the phone during September 2016.'.format(longest_phone_number, telephone_call_time.get(longest_phone_number)))

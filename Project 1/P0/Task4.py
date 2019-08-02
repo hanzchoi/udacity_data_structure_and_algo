@@ -26,7 +26,6 @@ The list of numbers should be print out one per line in lexicographic order with
 """
 
 
-
 def get_outcall_numbers(call_logs):
     outcall_set = set([])
 
