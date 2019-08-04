@@ -100,10 +100,11 @@ class LinkedList:
 
             index += 1
             node = node.next
+        else:
+            self.append(value)
 
     def size(self):
         """ Return the size or length of the linked list. """
-        # TODO: Write function to get size here
         size = 0
         node = self.head
         while node:
