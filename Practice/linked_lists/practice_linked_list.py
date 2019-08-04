@@ -36,6 +36,15 @@ class LinkedList:
         """ Append a value to the end of the list. """
 
         # TODO: Write function to append here
+        if self.head is None:
+            self.head = Node(value)
+            return
+
+        node = self.head
+        while node.next:
+            node = node.next
+
+        node.next = Node(value)
 
     def search(self, value):
         """ Search the linked list for a node with the requested value and return the node. """
