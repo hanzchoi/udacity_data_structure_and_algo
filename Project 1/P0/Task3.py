@@ -63,7 +63,9 @@ def mobile_phone_number_check(phone_number):
 
 
 def add_area_code_or_mobile_prefixes_to_set(phone_number):
-    if fixed_phone_lines_check(phone_number):
+    if phone_number.startswith("(080)"):
+        area_code_and_mobile_prefixes.add("080")
+    elif fixed_phone_lines_check(phone_number):
         close_index = phone_number.find(")")
         area_code_and_mobile_prefixes.add(phone_number[1:close_index])
     elif mobile_phone_number_check(phone_number):
@@ -74,7 +76,6 @@ def add_area_code_or_mobile_prefixes_to_set(phone_number):
 
 for call_logs in calls:
     add_area_code_or_mobile_prefixes_to_set(call_logs[0])
-    add_area_code_or_mobile_prefixes_to_set(call_logs[1])
 
 # Part A:
 print('The numbers called by people in Bangalore have codes: ')
