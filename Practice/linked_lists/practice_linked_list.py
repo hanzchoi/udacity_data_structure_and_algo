@@ -22,7 +22,6 @@ class LinkedList:
 
     def prepend(self, value):
         """ Prepend a value to the beginning of the list. """
-
         # TODO: Write function to prepend here
         if self.head is None:
             self.head = Node(value)
@@ -34,7 +33,6 @@ class LinkedList:
 
     def append(self, value):
         """ Append a value to the end of the list. """
-
         # TODO: Write function to append here
         if self.head is None:
             self.head = Node(value)
@@ -48,8 +46,17 @@ class LinkedList:
 
     def search(self, value):
         """ Search the linked list for a node with the requested value and return the node. """
-
         # TODO: Write function to search here
+        if self.head is None:
+            return None
+
+        node = self.head
+        while node:
+            if node.value == value:
+                return node
+            node = node.next
+
+        raise ValueError("Value not found in the list.")
 
     def remove(self, value):
         """ Remove first occurrence of value. """
