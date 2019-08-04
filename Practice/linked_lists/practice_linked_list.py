@@ -24,6 +24,13 @@ class LinkedList:
         """ Prepend a value to the beginning of the list. """
 
         # TODO: Write function to prepend here
+        if self.head is None:
+            self.head = Node(value)
+            return
+
+        new_head = Node(value)
+        new_head.next = self.head
+        self.head = new_head
 
     def append(self, value):
         """ Append a value to the end of the list. """
