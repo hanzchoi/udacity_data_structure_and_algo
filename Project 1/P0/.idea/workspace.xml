@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b42a73d3-4fd1-4caf-b469-e03ce0b05ea1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../Practice/linked_lists/loops_in_linked_lists.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practice/linked_lists/reverse_linked_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Practice/linked_lists/reverse_linked_list.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Task3.py" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.py" afterDir="false" />
     </list>
