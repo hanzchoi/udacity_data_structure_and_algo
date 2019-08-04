@@ -48,10 +48,26 @@ Because we are looking for the worst time complexity we can drop the constant,
 leaving us with O(n).
 
 
-Task4: O(n^2)
-We are traversing the calls and text data sets and storing the values into a set.
+Task4: O(q * r)
+We are traversing the calls data set and storing the values into a set only for outcalls.
+Traversing the data set will take linear time.
+So we can say that time taken is O(n) where n is the length of data set calls respectively.
+
+Then, we are traversing the calls and text data sets and storing the incoming calls, sent text numbers, and receiving text numbers.
 Traversing both the data set will take linear time.
-So we can say that time taken is O(n+m) where n and m are the lengths of dataset calls and texts respectively.
+So we can say that time taken is O(m + p) where m is the lengths of datasets calls and texts respectively.
+
+Then, we traverse the outcall set check if it contains in the except_call set and if it is not in that set then we store that value into a list.
+Traversing outcall set and inside the loop we are again iterating through the other set will take quadratic time.
+So we can that time taken is O(q * r) where q and r are the lengths of datasets outcall numbers and every other phone numbers respectively.
+
+Finally, we traverse through the possible telemarketer number to print and before that we will sort that dataset.
+So we can say that time taken is O(s) + O(s log s) where s is the length of dataset.
+
+Conclusion:
+The time complexity of the whole file will be O(n) + O(m + p) + O(q * r) + O(s) + O(s log s)
+Because we are looking for the worst time complexity we can just take the quadratic time and drop the other values.
+Thus, the we are left with O(q * r).
 
 
 
