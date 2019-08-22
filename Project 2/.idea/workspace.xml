@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="8230dc06-b9e3-447d-9ea8-bd09c2b4e9a5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/problem_2/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/problem_2_file_recursion/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/problem_2/problem_2.py" beforeDir="false" afterPath="$PROJECT_DIR$/problem_2_file_recursion/problem_2.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,6 +34,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/problem_6" />
+      <recent name="$PROJECT_DIR$/problem_5" />
+      <recent name="$PROJECT_DIR$/problem_4" />
       <recent name="$PROJECT_DIR$/problem_3" />
     </key>
   </component>
